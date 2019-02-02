@@ -1,0 +1,182 @@
+[
+  {
+    "restaurantName": "Be About",
+    "foodsExtractionUrl": "https://menucka.sk/denne-menu/bratislava/beabout-dulovo-namestie",
+    "lowestPrice": 4.95,
+    "highestPrice": 5.95,
+    "soupsPath": "div#restaurant > div:nth-of-type(5) > div:nth-of-type(2)",
+    "mainDishesPath": "div#restaurant > div:nth-of-type(5) > div:nth-of-type(4), div#restaurant > div:nth-of-type(5) > div:nth-of-type(6), div#restaurant > div:nth-of-type(5) > div:nth-of-type(8), div#restaurant > div:nth-of-type(5) > div:nth-of-type(11), div#restaurant > div:nth-of-type(5) > div:nth-of-type(14),div#restaurant > div:nth-of-type(5) > div:nth-of-type(17), div#restaurant > div:nth-of-type(5) > div:nth-of-type(20)",
+    "webPage": "https://www.beabout.sk/",
+    "latitude": 48.149262,
+    "longitude": 17.135419
+  },
+  {
+    "restaurantName": "Astra Pub Ruzinov",
+    "foodsExtractionUrl": "https://www.zomato.com/sk/widgets/daily_menu?entity_id=16508164",
+    "lowestPrice": 3.99,
+    "highestPrice": 4.99,
+    "soupsPath": "body > div.widget-body > div.main-body > div:nth-child(8) > div.left-div.item-name",
+    "mainDishesPath": "body > div.widget-body > div.main-body > div:nth-child(10) > div.left-div.item-name,body > div.widget-body > div.main-body > div:nth-child(12) > div.left-div.item-name, body > div.widget-body > div.main-body > div:nth-child(14) > div.left-div.item-name, body > div.widget-body > div.main-body > div:nth-child(16) > div.left-div.item-name, body > div.widget-body > div.main-body > div:nth-child(18) > div.left-div.item-name, body > div.widget-body > div.main-body > div:nth-child(20) > div.left-div.item-name",
+    "webPage": "http://www.astrapub.sk/",
+    "latitude": 48.148789,
+    "longitude": 17.144488
+  },
+  {
+    "mainDishesPath": "body div.about-info h4:nth-of-type(@day*4 - 2) + p + p, body div.about-info h4:nth-of-type(@day*4 - 2) + p + p + p, body div.about-info h4:nth-of-type(@day*4 - 2) + p + p + p + p, body div.about-info h4:nth-of-type(@day*4 - 1) + p + p, body div.about-info h4:nth-of-type(@day*4 - 1) + p + p + p, body div.about-info h4:nth-of-type(@day*4) + p + p, body div.about-info h4:nth-of-type(@day*4) + p + p + p",
+    "restaurantName": "Journal",
+    "lowestPrice": 3.2,
+    "highestPrice": 4.6,
+    "soupsPath": "body div.about-info h3:nth-of-type(@day) + p + p + h4 + p + p + p , body div.about-info h3:nth-of-type(@day) + p + p + h4 + p + p + p + p",
+    "foodsExtractionUrl": "http://www.luxfood.sk/#menu",
+    "webPage": "http://www.luxfood.sk/",
+    "latitude": 48.147674,
+    "longitude": 17.145373
+  },
+  {
+    "mainDishesPath": "body > div.wrapper > div.span-3 > div.main-content.no-padding > section.list.green-section > ul > li > hgroup > h3",
+    "restaurantName": "Presto B5",
+    "lowestPrice": 3.69,
+    "highestPrice": 4.99,
+    "soupsPath": "body > div.wrapper > div.span-3 > div.main-content.no-padding > section.list.blue-section > ul > li > hgroup > h3",
+    "foodsExtractionUrl": "http://www.restaurantpresto.sk/sk/menu/presto-b-v/",
+    "webPage": "http://www.restaurantpresto.sk/sk/presto-b-v/",
+    "latitude": 48.145519,
+    "longitude": 17.143019,
+    "filter": "close"
+  },
+  {
+    "restaurantName": "Buddies",
+    "foodsExtractionUrl": "http://buddies.sk/denne-menu/",
+    "lowestPrice": 5.0,
+    "highestPrice": 5.5,
+    "soupsPath": "html > body > div:nth-of-type(3) > div > div:nth-of-type(6) > div.item-name",
+    "mainDishesPath": "html > body > div:nth-of-type(3) > div > div:nth-of-type(8) > div, html > body > div:nth-of-type(3) > div > div:nth-of-type(10) > div, html > body > div:nth-of-type(3) > div > div:nth-of-type(12) > div",
+    "webPage": "http://www.buddies.sk/",
+    "latitude": 48.146876,
+    "longitude": 17.139459,
+    "filter": "close"
+  },
+  {
+    "mainDishesPath": "div.jedlo_polozka:gt(7) > div",
+    "restaurantName": "Bigger",
+    "lowestPrice": 5,
+    "highestPrice": 7,
+    "soupsPath": "html > body > div:nth-of-type(6) > div > div:nth-of-type(4) > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(3) > div",
+    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/bigger-snack-world_7049-ruzinov_2980/denne-menu",
+    "webPage": "http://www.bigger.sk",
+    "latitude": 48.150968,
+    "longitude": 17.139263,
+    "filter": "burrito,mileticka,burger"
+  },
+  {
+    "mainDishesPath": "div.jedlo_polozka:gt(7) > div",
+    "restaurantName": "Sestka Canteen",
+    "lowestPrice": 4.5,
+    "highestPrice": 4.7,
+    "soupsPath": "body > div.body_wrapper > div.site_wrapper > div.content > div.left_panel > div > div.denne_menu.left_panel_wrapper > div:nth-child(3) > div > div:lt(5) > div",
+    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/sestka-canteen_10346-ruzinov_2980/denne-menu",
+    "webPage": "https://www.sestka.xyz/",
+    "latitude": 48.1464542,
+    "longitude": 17.1362556,
+    "filter": "close"
+  },
+  {
+    "mainDishesPath": "div.jedlo_polozka:gt(3) > div",
+    "restaurantName": "La Strada",
+    "lowestPrice": 5,
+    "highestPrice": 7,
+    "soupsPath": "body > div.body_wrapper > div.site_wrapper > div.content > div.left_panel > div > div.denne_menu.left_panel_wrapper > div:nth-child(3) > div > div:nth-child(2) > div",
+    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/la-strada-ristorante_7573-ruzinov_2980/denne-menu",
+    "webPage": "https://sk-sk.facebook.com/lastradaristorantemileticova",
+    "latitude": 48.1508309,
+    "longitude": 17.13947989999997
+  },
+  {
+    "mainDishesPath": "body > div.body_wrapper > div.site_wrapper > div.content > div.left_panel > div > div.denne_menu.left_panel_wrapper > div:nth-child(4) > div > div:gt(3)",
+    "restaurantName": "Delfin",
+    "lowestPrice": 3.8,
+    "highestPrice": 5.89,
+    "soupsPath": "body > div.body_wrapper > div.site_wrapper > div.content > div.left_panel > div > div.denne_menu.left_panel_wrapper > div:nth-child(4) > div > div:nth-child(2) > div",
+    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/delfin_717-ruzinov_2980/denne-menu",
+    "webPage": "http://www.restauraciadelfin.sk",
+    "latitude": 48.149786,
+    "longitude": 17.142630
+  },
+  {
+    "mainDishesPath": "body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(4),body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(6), body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(8), body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(10), body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(12),body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(14), body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(16)",
+    "restaurantName": "Bridge",
+    "lowestPrice": 3.9,
+    "highestPrice": 9.9,
+    "soupsPath": "body > div.menucka > div#container > div#upperContent > div.container > div.row > div#content > div.container > div.row > div#accordion > div#mainContent > div#restaurant > div:nth-child(5) > div:nth-child(2)",
+    "foodsExtractionUrl": "https://menu.pravda.sk/denne-menu/bratislava/bridge",
+    "webPage": "http://www.restauraciabridge.sk/",
+    "latitude": 48.143026,
+    "longitude": 17.134398
+  },
+  {
+    "mainDishesPath": "#page-content > table > tbody:nth-child(2) > tr:nth-child(@day*5-2) > td:nth-child(4), #page-content > table > tbody:nth-child(2) > tr:nth-child(@day*5-1) > td:nth-child(4), #page-content > table > tbody:nth-child(2) > tr:nth-child(@day*5) > td:nth-child(4)",
+    "restaurantName": "Lunch break",
+    "lowestPrice": 4.8,
+    "highestPrice": 6.9,
+    "soupsPath": "#page-content > table > tbody:nth-child(2) > tr:nth-child(@day*5-3) > td:nth-child(4)",
+    "foodsExtractionUrl": "http://www.lunch-break.sk/menu/",
+    "webPage": "http://www.lunch-break.sk/",
+    "latitude": 48.145925,
+    "longitude": 17.138388
+  },
+  {
+    "mainDishesPath": "body > div.wrapper > div.span-3 > div.main-content.no-padding > section.list.green-section > ul > li > hgroup > h3",
+    "restaurantName": "Presto BBC I",
+    "lowestPrice": 3.69,
+    "highestPrice": 5,
+    "soupsPath": "body > div.wrapper > div.span-3 > div.main-content.no-padding > section.list.blue-section > ul > li > hgroup > h3",
+    "foodsExtractionUrl": "http://www.restaurantpresto.sk/sk/menu/presto-bbc-i/",
+    "webPage": "http://www.restaurantpresto.sk/sk/presto-bbc-i/",
+    "latitude": 48.1471287,
+    "longitude": 17.1429708
+  },
+  {
+    "mainDishesPath": "body > div#page > div#main > div.denne-menu > div.home-menu-content > div.den-menu > div.denne-menu-item-front > ul > li:nth-child(2) > span.name, body > div#page > div#main > div.denne-menu > div.home-menu-content > div.den-menu > div.denne-menu-item-front > ul > li:nth-child(3) > span.name, body > div#page > div#main > div.denne-menu > div.home-menu-content > div.den-menu > div.denne-menu-item-front > ul > li:nth-child(4) > span.name",
+    "restaurantName": "Solo Sole",
+    "lowestPrice": 4.9,
+    "highestPrice": 6.9,
+    "soupsPath": "body > div#page > div#main > div.denne-menu > div.home-menu-content > div.den-menu > div.denne-menu-item-front > ul > li:nth-child(1) > span.name",
+    "foodsExtractionUrl": "http://www.solo-sole.sk/",
+    "webPage": "http://www.solo-sole.sk/",
+    "latitude": 48.1469221,
+    "longitude": 17.1404818
+  },
+  {
+    "mainDishesPath": "div.dnesne_menu > div:nth-child(10) > div, div.dnesne_menu > div:nth-child(12) > div, div.dnesne_menu > div:nth-child(16) > div",
+    "restaurantName": "Pivovar Komin",
+    "lowestPrice": 4.5,
+    "highestPrice": 4.5,
+    "soupsPath": "div.dnesne_menu > div:nth-child(4) > div, div.dnesne_menu > div:nth-child(6) > div",
+    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/ruzinovsky-pivovar-komin_7814-ruzinov_2980/denne-menu",
+    "webPage": "http://www.pivovarkomin.sk/",
+    "latitude": 48.1538015,
+    "longitude": 17.1359952
+  },
+  {
+    "mainDishesPath": "html body div.container div.row div.vc_row.wpb_row.vc_row-fluid:nth-of-type(1) div div div.wpb_wrapper div div p:gt(1):lt(7)",
+    "restaurantName": "Lanogi Gurman",
+    "lowestPrice": 4.49,
+    "highestPrice": 5.49,
+    "soupsPath": "html body div.container div.row div.vc_row.wpb_row.vc_row-fluid:nth-of-type(1) div div div.wpb_wrapper div div p:nth-of-type(1), html body div.container div.row div.vc_row.wpb_row.vc_row-fluid:nth-of-type(1) div div div.wpb_wrapper div div p:nth-of-type(2)",
+    "foodsExtractionUrl": "http://www.lanogi.sk/denne-menu/",
+    "webPage": "http://www.lanogi.sk/",
+    "latitude": 48.1461026,
+    "longitude": 17.1399753
+  },
+  {
+    "mainDishesPath": "div.pcs-body > div.pcs-content > p:nth-child(3) > span, div.pcs-body > div.pcs-content > p:nth-child(4) > span, div.pcs-body > div.pcs-content > p:nth-child(5) > span, div.pcs-body > div.pcs-content > p:nth-child(6) > span",
+    "restaurantName": "Veg life",
+    "lowestPrice": 3.0,
+    "highestPrice": 7.0,
+    "soupsPath": "p#denne_menu > span",
+    "foodsExtractionUrl": "http://www.veglife.sk/sk/",
+    "webPage": "http://www.veglife.sk/sk/",
+    "latitude": 48.147252,
+    "longitude": 17.142373
+  }
+]
