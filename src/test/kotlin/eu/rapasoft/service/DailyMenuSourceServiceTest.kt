@@ -1,13 +1,12 @@
 package eu.rapasoft.service
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 class DailyMenuSourceServiceTest {
 
     @Test
     fun getSources() {
-        DailyMenuSourceService().sources
+        assertEquals(16, DailyMenuSourceService().sources.size)
     }
 }
