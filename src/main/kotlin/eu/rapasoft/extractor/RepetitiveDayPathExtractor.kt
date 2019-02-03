@@ -6,6 +6,8 @@ import eu.rapasoft.model.DailyMenuSource
 import eu.rapasoft.model.Food
 import eu.rapasoft.service.ConnectionService
 import org.jsoup.nodes.Document
+import org.koin.standalone.inject
+import org.slf4j.Logger
 import java.time.LocalDate
 import java.util.*
 import javax.script.ScriptEngineManager
@@ -13,6 +15,8 @@ import javax.script.ScriptEngineManager
 class RepetitiveDayPathExtractor(
     private val connectionService: ConnectionService
 ) : Extractor {
+
+    private val logger: Logger by inject()
 
     override fun extract(dailyMenuSource: DailyMenuSource): DailyMenu {
 
@@ -25,7 +29,7 @@ class RepetitiveDayPathExtractor(
             retrieveList(dailyMenuSource.mainDishesPath, html)
         )
 
-        println("Extracted $extracted")
+        logger.info("Extracted ${extracted.soups}, ${extracted.mains}")
 
         return extracted
     }

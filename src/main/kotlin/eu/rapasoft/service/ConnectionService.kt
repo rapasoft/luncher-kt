@@ -4,18 +4,22 @@ import eu.rapasoft.model.DailyMenuSource
 import org.jsoup.HttpStatusException
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
+import org.koin.standalone.KoinComponent
+import org.koin.standalone.inject
+import org.slf4j.Logger
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import javax.net.ssl.SSLHandshakeException
 
-class ConnectionService {
+class ConnectionService : KoinComponent {
 
     private val emptyDocument = Document.createShell("http://itera.no")
+    private val logger: Logger by inject()
 
     fun fetchPageWithReconnects(dailyMenuSource: DailyMenuSource, retries: Int): Document {
         val foodsExtractionUrl = dailyMenuSource.foodsExtractionUrl
         if (foodsExtractionUrl.isEmpty()) {
-            println("Nothing to download from  ${dailyMenuSource.restaurantName}, because foods extraction URL is empty")
+            logger.warn("Nothing to download from  ${dailyMenuSource.restaurantName}, because foods extraction URL is empty")
             return emptyDocument
         }
 
@@ -29,24 +33,24 @@ class ConnectionService {
                 .get()
 
         } catch (e: SocketTimeoutException) {
-            println("Failed to download from $foodsExtractionUrl, $retries more retries left")
+            logger.warn("Failed to download from $foodsExtractionUrl, $retries more retries left")
             return if (retries > 0) {
                 fetchPageWithReconnects(dailyMenuSource, retries - 1)
             } else {
-                println("Failed to download from $foodsExtractionUrl, because exception occured: ${e.message}")
+                logger.warn("Failed to download from $foodsExtractionUrl, because exception occured: ${e.message}")
                 emptyDocument
             }
         } catch (e: SSLHandshakeException) {
-            println("Failed to download from $foodsExtractionUrl, because exception occured: ${e.message}")
+            logger.warn("Failed to download from $foodsExtractionUrl, because exception occured: ${e.message}")
             return emptyDocument
         } catch (e: UnknownHostException) {
-            println("Failed to download from $foodsExtractionUrl, because exception occured (UnknownHostException): ${e.message}")
+            logger.warn("Failed to download from $foodsExtractionUrl, because exception occured (UnknownHostException): ${e.message}")
             return emptyDocument
         } catch (e: HttpStatusException) {
-            println("Failed to fetch URL for $foodsExtractionUrl, because exception occured: ${e.message}")
+            logger.warn("Failed to fetch URL for $foodsExtractionUrl, because exception occured: ${e.message}")
             return emptyDocument
         } catch (e: Exception) {
-            println("Unexpected exception was thrown for $foodsExtractionUrl: ${e.message}")
+            logger.error("Unexpected exception was thrown for $foodsExtractionUrl: ${e.message}")
             return emptyDocument
         }
     }

@@ -21,9 +21,11 @@ import io.ktor.server.netty.Netty
 import org.koin.dsl.module.module
 import org.koin.ktor.ext.inject
 import org.koin.standalone.StandAloneContext.startKoin
+import org.slf4j.LoggerFactory
 
 fun main() {
     startKoin(listOf(module {
+        single { LoggerFactory.getLogger("Luncher") }
         single { DailyMenuSourceService() }
         single { SimplePathExtractor(get()) }
         single { RepetitiveDayPathExtractor(get()) }
