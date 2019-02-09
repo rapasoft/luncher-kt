@@ -6,5 +6,5 @@ data class DailyMenu(
     val date: Date,
     val restaurant: DailyMenuSource,
     val soups: Set<Food>,
-    val mains: Set<Food>
+    val mainDishes: Set<Food>
 )

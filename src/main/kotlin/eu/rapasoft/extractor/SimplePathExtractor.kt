@@ -31,7 +31,7 @@ class SimplePathExtractor(private val connectionService: ConnectionService) : Ex
             extractFoodList(dailyMenuSource.mainDishesPath, html)
         )
 
-        logger.info("Extracted ${extracted.soups}, ${extracted.mains}")
+        logger.info("Extracted ${extracted.soups}, ${extracted.mainDishes}")
 
         return extracted
     }

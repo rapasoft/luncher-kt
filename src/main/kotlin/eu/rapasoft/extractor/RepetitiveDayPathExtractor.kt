@@ -29,7 +29,7 @@ class RepetitiveDayPathExtractor(
             retrieveList(dailyMenuSource.mainDishesPath, html)
         )
 
-        logger.info("Extracted ${extracted.soups}, ${extracted.mains}")
+        logger.info("Extracted ${extracted.soups}, ${extracted.mainDishes}")
 
         return extracted
     }
