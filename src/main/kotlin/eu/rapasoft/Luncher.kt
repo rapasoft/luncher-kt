@@ -1,8 +1,6 @@
 package eu.rapasoft
 
-import eu.rapasoft.extractor.ExtractorFactory
-import eu.rapasoft.extractor.RepetitiveDayPathExtractor
-import eu.rapasoft.extractor.SimplePathExtractor
+import eu.rapasoft.extractor.Extractor
 import eu.rapasoft.service.ConnectionService
 import eu.rapasoft.service.DailyMenuSourceService
 import eu.rapasoft.service.ExtractionService
@@ -25,11 +23,10 @@ import org.slf4j.LoggerFactory
 
 fun main() {
     startKoin(listOf(module {
+
         single { LoggerFactory.getLogger("Luncher") }
         single { DailyMenuSourceService() }
-        single { SimplePathExtractor(get()) }
-        single { RepetitiveDayPathExtractor(get()) }
-        single { ExtractorFactory(get(), get()) }
+        single { Extractor(get()) }
         single { ConnectionService() }
         single { ExtractionService(get(), get()) }
     }))
