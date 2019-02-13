@@ -13,14 +13,14 @@ import org.slf4j.LoggerFactory
 
 class ExtractorTest : KoinComponent {
 
-    private val extractor: ExtractorImpl by inject()
+    private val extractor: Extractor by inject()
 
     @Before
     fun before() {
         StandAloneContext.startKoin(listOf(module {
             single { ConnectionService() }
             single { LoggerFactory.getLogger("Luncher") }
-            single { ExtractorImpl(get()) }
+            single { Extractor(get()) }
             single { DailyMenuSourceService() }
         }))
     }

@@ -1,6 +1,6 @@
 package eu.rapasoft
 
-import eu.rapasoft.extractor.ExtractorImpl
+import eu.rapasoft.extractor.Extractor
 import eu.rapasoft.service.ConnectionService
 import eu.rapasoft.service.DailyMenuSourceService
 import eu.rapasoft.service.ExtractionService
@@ -26,7 +26,7 @@ fun main() {
 
         single { LoggerFactory.getLogger("Luncher") }
         single { DailyMenuSourceService() }
-        single { ExtractorImpl(get()) }
+        single { Extractor(get()) }
         single { ConnectionService() }
         single { ExtractionService(get(), get()) }
     }))
