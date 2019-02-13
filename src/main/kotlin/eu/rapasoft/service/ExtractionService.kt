@@ -1,13 +1,13 @@
 package eu.rapasoft.service
 
-import eu.rapasoft.extractor.ExtractorFactory
+import eu.rapasoft.extractor.Extractor
 import eu.rapasoft.model.DailyMenu
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class ExtractionService(
-    private val extractorFactory: ExtractorFactory,
+    private val extractor: Extractor,
     private val dailyMenuSourceService: DailyMenuSourceService
 ) {
     val extracted = mutableListOf<DailyMenu>()
@@ -17,7 +17,7 @@ class ExtractionService(
             coroutineScope {
                 dailyMenuSourceService.sources.forEach {
                     launch {
-                        extracted.add(extractorFactory.selectExtractor(it).extract(it))
+                        extracted.add(extractor.extract(it))
                     }
                 }
             }

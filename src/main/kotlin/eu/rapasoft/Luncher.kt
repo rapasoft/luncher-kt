@@ -1,9 +1,6 @@
 package eu.rapasoft
 
-import eu.rapasoft.extractor.ExtractorFactory
-import eu.rapasoft.extractor.RepetitiveDayPathExtractor
-import eu.rapasoft.extractor.SimplePathExtractor
-import eu.rapasoft.extractor.TotalBrutalMachineLearningExtractor
+import eu.rapasoft.extractor.ExtractorImpl
 import eu.rapasoft.service.ConnectionService
 import eu.rapasoft.service.DailyMenuSourceService
 import eu.rapasoft.service.ExtractionService
@@ -29,10 +26,7 @@ fun main() {
 
         single { LoggerFactory.getLogger("Luncher") }
         single { DailyMenuSourceService() }
-        single { SimplePathExtractor(get()) }
-        single { TotalBrutalMachineLearningExtractor(get()) }
-        single { RepetitiveDayPathExtractor(get()) }
-        single { ExtractorFactory(get(), get()) }
+        single { ExtractorImpl(get()) }
         single { ConnectionService() }
         single { ExtractionService(get(), get()) }
     }))

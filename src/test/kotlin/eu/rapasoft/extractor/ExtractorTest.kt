@@ -11,16 +11,16 @@ import org.koin.standalone.StandAloneContext
 import org.koin.standalone.inject
 import org.slf4j.LoggerFactory
 
-class TotalBrutalMachineLearningExtractorTest : KoinComponent {
+class ExtractorTest : KoinComponent {
 
-    private val totalBrutalMachineLearningExtractor: TotalBrutalMachineLearningExtractor by inject()
+    private val extractor: ExtractorImpl by inject()
 
     @Before
     fun before() {
         StandAloneContext.startKoin(listOf(module {
             single { ConnectionService() }
             single { LoggerFactory.getLogger("Luncher") }
-            single { TotalBrutalMachineLearningExtractor(get()) }
+            single { ExtractorImpl(get()) }
             single { DailyMenuSourceService() }
         }))
     }
@@ -33,7 +33,7 @@ class TotalBrutalMachineLearningExtractorTest : KoinComponent {
     @Test
     fun extract() {
         DailyMenuSourceService().sources.forEach {
-            totalBrutalMachineLearningExtractor.extract(it)
+            extractor.extract(it)
         }
     }
 }
