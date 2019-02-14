@@ -1,0 +1,26 @@
+#app {
+    column-count: 4;
+    column-gap: 1em;
+    column-span: none;
+    column-fill: auto;
+}
+
+li {
+    list-style: none;
+    margin-left: -25px;
+    padding: 0.1em 0;
+}
+
+.menu {
+    width: 100%;
+    border: 1px solid darkred;
+    padding: 0.5em;
+}
+
+.soups {
+    color: dimgrey;
+}
+
+.mains {
+    font-size: 1em;
+}

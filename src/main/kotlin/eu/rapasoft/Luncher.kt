@@ -10,6 +10,9 @@ import io.ktor.features.CallLogging
 import io.ktor.features.ContentNegotiation
 import io.ktor.features.DefaultHeaders
 import io.ktor.gson.gson
+import io.ktor.http.content.defaultResource
+import io.ktor.http.content.resources
+import io.ktor.http.content.static
 import io.ktor.response.respond
 import io.ktor.routing.get
 import io.ktor.routing.routing
@@ -57,6 +60,10 @@ fun main() {
         }
 
         routing {
+            static {
+                resources("frontend")
+                defaultResource("frontend/index.html")
+            }
             get("/menu") {
                 call.respond(extractionService.extracted)
             }
