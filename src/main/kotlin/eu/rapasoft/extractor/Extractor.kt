@@ -2,27 +2,16 @@ package eu.rapasoft.extractor
 
 import eu.rapasoft.model.DailyMenu
 import eu.rapasoft.model.DailyMenuSource
-import eu.rapasoft.model.Food
 import eu.rapasoft.service.ConnectionService
-import eu.rapasoft.utils.guessExtractionPath
-import eu.rapasoft.utils.selectMainContent
-import eu.rapasoft.utils.splitWords
+import eu.rapasoft.utils.*
 import org.nield.kotlinstatistics.toNaiveBayesClassifier
-import java.nio.file.Files
-import java.nio.file.Paths
 import java.util.*
 
 class Extractor(private val connectionService: ConnectionService) {
 
-    private fun loadFromClassPath(type: String): List<FoodClass> =
-        Files.readAllLines(Paths.get(javaClass.getResource("/dictionary/$type.txt").toURI()))
-            .map { FoodClass(it, type) }
-
-    private val soups = loadFromClassPath("soups")
-    private val mains = loadFromClassPath("mains")
-    private val other = loadFromClassPath("other")
-
-    private class FoodClass(val description: String, val category: String)
+    private val soups = loadDictionaryFromClassPath("soups")
+    private val mains = loadDictionaryFromClassPath("mains")
+    private val other = loadDictionaryFromClassPath("other")
 
     private val classifier = listOf<FoodClass>().union(soups).union(mains).union(other)
         .toNaiveBayesClassifier(
@@ -46,9 +35,4 @@ class Extractor(private val connectionService: ConnectionService) {
             toFood("mains", extractedFood)
         )
     }
-
-    private fun toFood(type: String, extractedFood: List<Pair<String, String?>>) =
-        extractedFood.filter { it.second == type && it.first.isNotBlank() }.map {
-            Food(it.first, emptySet())
-        }.toSet()
 }

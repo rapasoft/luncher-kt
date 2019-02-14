@@ -1,10 +1,24 @@
 package eu.rapasoft.utils
 
+import eu.rapasoft.model.Food
 import io.ktor.http.Url
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.safety.Whitelist
 import org.jsoup.select.Elements
+import java.nio.file.Files
+import java.nio.file.Paths
+
+class FoodClass(val description: String, val category: String)
+
+fun loadDictionaryFromClassPath(type: String): List<FoodClass> =
+    Files.readAllLines(Paths.get(FoodClass::class.java.getResource("/dictionary/$type.txt").toURI()))
+        .map { FoodClass(it, type) }
+
+fun toFood(type: String, extractedFood: List<Pair<String, String?>>) =
+    extractedFood.filter { it.second == type && it.first.isNotBlank() }.map {
+        Food(it.first, emptySet())
+    }.toSet()
 
 fun guessExtractionPath(url: String): String {
     return when (Url(url).host) {
