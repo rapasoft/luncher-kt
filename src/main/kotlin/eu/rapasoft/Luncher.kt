@@ -11,19 +11,23 @@ import io.ktor.features.ContentNegotiation
 import io.ktor.features.DefaultHeaders
 import io.ktor.gson.gson
 import io.ktor.response.respond
-import io.ktor.response.respondText
 import io.ktor.routing.get
 import io.ktor.routing.routing
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.koin.dsl.module.module
 import org.koin.ktor.ext.inject
 import org.koin.standalone.StandAloneContext.startKoin
 import org.slf4j.LoggerFactory
+import java.util.*
+import javax.management.timer.Timer.ONE_HOUR
+import kotlin.concurrent.scheduleAtFixedRate
 
 fun main() {
     startKoin(listOf(module {
-
         single { LoggerFactory.getLogger("Luncher") }
         single { DailyMenuSourceService() }
         single { Extractor(get()) }
@@ -45,12 +49,14 @@ fun main() {
         }
 
         val extractionService: ExtractionService by inject()
-        extractionService.extractAll()
+
+        Timer().scheduleAtFixedRate(0L, ONE_HOUR) {
+            CoroutineScope(Dispatchers.Default).launch {
+                extractionService.extractAll()
+            }
+        }
 
         routing {
-            get("/ping") {
-                call.respondText { "Pong" }
-            }
             get("/menu") {
                 call.respond(extractionService.extracted)
             }
