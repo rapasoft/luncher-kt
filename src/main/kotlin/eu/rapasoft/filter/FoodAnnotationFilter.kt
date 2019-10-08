@@ -12,11 +12,11 @@ class FoodAnnotationFilter : DailyMenuFilter {
         FoodAnnotation("pig", """(brav[c|č|ć].*|krkovi[c|č|ć]k.*|panenk.*|b[o|ô][c|č|ć]ik.*|pliec.*|kolienk.*)""".toRegex(RegexOption.IGNORE_CASE)),
         FoodAnnotation("hamburger", """(hamburg.*)|(burger)""".toRegex(RegexOption.IGNORE_CASE)),
         FoodAnnotation("pizza", """(pizza.*)""".toRegex(RegexOption.IGNORE_CASE)),
-        FoodAnnotation("pasta","""(cestovin.*|penne|[š|]pagh{0,1}ett{0,1}[i|y]|tagliatelle|bulgur|gnocchi|la[s|z]ag{0,1}ne|fusilli|tortellini|farfalle|pirohy|pappardelle|makar[ó|o]ny|maltagliati|rigatoni|fettucine|lasagne|linguine|cavatappi|ravioli|canelloni|cappelleti|fagotini|girandole|maccheroni|sedanini|sedani|rezance|sl[i|í][ž|z]e)""".toRegex(RegexOption.IGNORE_CASE)),
-        FoodAnnotation("salad", """([š|s]al[a|á]t|salad).*""".toRegex(RegexOption.IGNORE_CASE)),
+        FoodAnnotation("ramen","""(cestovin.*|penne|[š|]pagh{0,1}ett{0,1}[i|y]|tagliatelle|bulgur|gnocchi|la[s|z]ag{0,1}ne|fusilli|tortellini|farfalle|pirohy|pappardelle|makar[ó|o]ny|maltagliati|rigatoni|fettucine|lasagne|linguine|cavatappi|ravioli|canelloni|cappelleti|fagotini|girandole|maccheroni|sedanini|sedani|rezance|sl[i|í][ž|z]e)""".toRegex(RegexOption.IGNORE_CASE)),
+        FoodAnnotation("green_salad", """([š|s]al[a|á]t|salad).*""".toRegex(RegexOption.IGNORE_CASE)),
         FoodAnnotation("fish", """(ryba.*|pstruh|losos|zub[a|á][c|č]|[š|s][t|ť]uk.*|kapor|kapra|karas|pangasi.*|treska|makrela|[z|ž]ralok|sumec|sum[c|č|ć]ek|tuniak|mahi)""".toRegex(RegexOption.IGNORE_CASE)),
         FoodAnnotation("cake", """(buchta|buchty|pala[c|č|ć]inka|pala[c|č|ć]inky|lievance|[š|s][ú|u][l|ľ]ance|[š|s]i[š|s]ky|buchti[c|č|ć]ky|n[a|á]kyp|gule)""".toRegex(RegexOption.IGNORE_CASE)),
-        FoodAnnotation("deeg", """(divin.*|jele[n|ň].*|srn.*|divia.*)""".toRegex(RegexOption.IGNORE_CASE))
+        FoodAnnotation("deer", """(divin.*|jele[n|ň].*|srn.*|divia.*)""".toRegex(RegexOption.IGNORE_CASE))
     )
 
     override fun filter(dailyMenu: DailyMenu): DailyMenu {

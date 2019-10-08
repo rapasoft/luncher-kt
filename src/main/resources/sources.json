@@ -37,16 +37,6 @@
     "filter": "close"
   },
   {
-    "restaurantName": "Buddies",
-    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/buddies_7319-ruzinov_2980/denne-menu",
-    "lowestPrice": 5.0,
-    "highestPrice": 5.5,
-    "webPage": "http://www.buddies.sk/",
-    "latitude": 48.146876,
-    "longitude": 17.139459,
-    "filter": "close"
-  },
-  {
     "restaurantName": "Bigger",
     "lowestPrice": 5,
     "highestPrice": 7,
@@ -76,15 +66,6 @@
     "longitude": 17.142630
   },
   {
-    "restaurantName": "Bridge",
-    "lowestPrice": 3.9,
-    "highestPrice": 9.9,
-    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/bridge_4563-ruzinov_2980/denne-menu",
-    "webPage": "http://www.restauraciabridge.sk/",
-    "latitude": 48.143026,
-    "longitude": 17.134398
-  },
-  {
     "restaurantName": "Lunch break",
     "lowestPrice": 4.8,
     "highestPrice": 6.9,
@@ -103,15 +84,6 @@
     "longitude": 17.1429708
   },
   {
-    "restaurantName": "Solo Sole",
-    "lowestPrice": 4.9,
-    "highestPrice": 6.9,
-    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/solo-sole_10036-ruzinov_2980/denne-menu",
-    "webPage": "http://www.solo-sole.sk/",
-    "latitude": 48.1469221,
-    "longitude": 17.1404818
-  },
-  {
     "restaurantName": "Pivovar Komin",
     "lowestPrice": 4.5,
     "highestPrice": 4.5,
@@ -124,7 +96,7 @@
     "restaurantName": "Lanogi Gurman",
     "lowestPrice": 4.49,
     "highestPrice": 5.49,
-    "foodsExtractionUrl": "https://restauracie.sme.sk/restauracia/lanogi-gurman_9814-ruzinov_2980/denne-menu",
+    "foodsExtractionUrl": "https://www.lanogi.sk/denne-menu/",
     "webPage": "http://www.lanogi.sk/",
     "latitude": 48.1461026,
     "longitude": 17.1399753

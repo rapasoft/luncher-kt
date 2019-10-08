@@ -26,6 +26,7 @@ class ExtractionService(
     suspend fun extractAll() {
         coroutineScope {
             val dailyMenuSources = dailyMenuSourceService.sources
+            extracted.clear()
 
             dailyMenuSources.forEach { dailyMenuSource ->
                 launch {

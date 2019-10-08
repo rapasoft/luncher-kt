@@ -6,13 +6,16 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.safety.Whitelist
 import org.jsoup.select.Elements
+import java.io.InputStreamReader
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.util.*
 
 class FoodClass(val description: String, val category: String)
 
 fun loadDictionaryFromClassPath(type: String): List<FoodClass> =
-    Files.readAllLines(Paths.get(FoodClass::class.java.getResource("/dictionary/$type.txt").toURI()))
+    InputStreamReader(FoodClass::class.java.getResourceAsStream("/dictionary/$type.txt"))
+        .readLines()
         .map { FoodClass(it, type) }
 
 fun toFood(type: String, extractedFood: List<Pair<String, String?>>) =
@@ -25,6 +28,7 @@ fun guessExtractionPath(url: String): String {
         "www.zomato.sk" -> "#restaurant > div:nth-child(5)"
         "www.zomato.com" -> "#menu-preview > div.tmi-groups > div:nth-child(1)"
         "restauracie.sme.sk" -> "div.dnesne_menu"
+        "lanogi.sk" -> "div.wpb_wrapper"
         "www.restaurantpresto.sk" -> "body > div:nth-child(2) > div"
         "www.veglife.sk" -> "#optimizer_front_text-10 > div > div > div.text_block_wrap > div > div > div > div > div > div.pcs-content.pcs-reset"
         else -> "body"

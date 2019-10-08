@@ -25,6 +25,6 @@ class DailyMenuSourceServiceTest {
 
     @Test
     fun getSources() {
-        assertEquals(15, DailyMenuSourceService().sources.size)
+        assertEquals(12, DailyMenuSourceService().sources.size)
     }
 }
