@@ -1,7 +1,8 @@
 package eu.rapasoft
 
 import eu.rapasoft.extractor.Extractor
-import eu.rapasoft.model.DailyMenuSlackMessage
+import eu.rapasoft.model.SlackMessageAttachment
+import eu.rapasoft.model.SlackMessageBody
 import eu.rapasoft.service.ConnectionService
 import eu.rapasoft.service.DailyMenuSourceService
 import eu.rapasoft.service.ExtractionService
@@ -17,6 +18,7 @@ import io.ktor.http.content.resources
 import io.ktor.http.content.static
 import io.ktor.response.respond
 import io.ktor.routing.get
+import io.ktor.routing.post
 import io.ktor.routing.routing
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -66,8 +68,14 @@ fun Application.main() {
         get("/menu") {
             call.respond(extractionService.extracted)
         }
-        get("/menu-slack") {
-            call.respond(DailyMenuSlackMessage(extractionService.extracted))
+        post("/menu-slack") {
+            call.respond(SlackMessageBody(extractionService.extracted.map {
+                SlackMessageAttachment(
+                    it.restaurant.restaurantName,
+                    it.soups,
+                    it.mainDishes
+                )
+            }))
         }
     }
 }

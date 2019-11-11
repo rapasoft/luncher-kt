@@ -26,12 +26,12 @@ class SlackMessageAttachment {
         this.fields = listOf(
             Field(
                 "Soups",
-                soups.joinToString("\\n") { it.type.joinToString(" ") { type -> ":${type.category}: " } + it.description },
+                soups.joinToString("\n") { it.type.joinToString(" ") { type -> ":${type.category}: " } + it.description },
                 true
             ),
             Field(
                 "Mains",
-                mains.joinToString("\\n") { it.type.joinToString(" ") { type -> ":${type.category}: " } + it.description })
+                mains.joinToString("\n") { it.type.joinToString(" ") { type -> ":${type.category}: " } + it.description })
         )
     }
 
